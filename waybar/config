@@ -1,0 +1,130 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 20,
+    "spacing": 5,
+    "modules-left": ["hyprland/workspaces", "group/usage"],
+    "modules-center": [],
+    "modules-right": ["clock", "wireplumber", "group/bat", "group/net", "custom/power" ],
+
+    "group/usage": {
+        "orientation": "horizontal",
+        "modules": ["cpu", "memory", "temperature"]
+    },
+
+    "group/bat": {
+        "orientation": "horizontal",
+        "modules": ["battery", "backlight"]
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "\uf4bc {usage}%",
+        "rotate": "${r_deg}",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3}",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"]
+    },
+
+    "memory": {
+        "interval": 1,
+        "format": "| {used:.1f}/{total:.1f}GB |"
+    },
+
+    "group/net": {
+        "orientation": "horizontal",
+        "modules": ["network", "bluetooth"]
+    },
+
+     "custom/power": {
+        "format": "\udb80\ude39 {}",
+        "rotate": "${r_deg}",
+        "on-click": "wlogout"
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "\uf015",
+            "2": "\ue8da",
+            "3": "\uf15fc",
+        },
+        "icon-size": 50,
+        "sort-by-number": true,
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+        }
+    },
+
+    "clock": {
+        "format": "{:%d/%m/%Y | %H:%M |}"
+    },
+
+    "wireplumber": {
+        "format": "\udb81\udd7e  {volume}%",
+        "max-volume": 100,
+        "scroll-step": 5
+    },
+
+    "battery": {
+        "bat": "BAT1",
+        "interval": 60,
+        "format": "{icon}  {capacity}%",
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+    },
+
+    "backlight": {
+        "format": "\udb80\udcdf  {percent}%"
+    },
+
+    "temperature": {
+	       "thermal-zone": 2,
+	       "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/thermal/thermal_zone0/temp"],
+	       "critical-threshold": 80,
+	       "format-critical": "{temperatureC}°C ",
+	        "format": "{temperatureC}°C ",
+		"interval": 1
+    },
+
+    "network": {
+            "tooltip": true,
+            "format-wifi": " ",
+            "rotate": 0,
+            "format-ethernet": "󰈀 ",
+            "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+            "format-linked": "󰈀 {ifname} (No IP)",
+            "format-disconnected": "󰖪 ",
+            "tooltip-format-disconnected": "Disconnected",
+            "format-alt": "<span foreground='#99ffdd'> {bandwidthDownBytes}</span> <span foreground='#ffcc66'> {bandwidthUpBytes}</span>",
+            "interval": 2,
+    },
+
+
+    "bluetooth": {
+        "format": "\udb80\udcaf",
+        "format-disabled": "\udb80\udcb2",
+        "format-connected": "\udb80\udcb1",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+
+    "hyprland/language": {
+        "format": "{short}"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 16
+    },
+
+    "bandwidthDownBits": {
+        "interval": 30
+    },
+
+    "bandwidthUpBits": {
+        "interval": 30
+    }
+}

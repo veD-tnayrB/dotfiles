@@ -1,0 +1,46 @@
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 10px;
+    min-height: 8px;
+}
+
+@import "theme.css";
+
+window#waybar {
+    background: @bar-bg;
+    margin: 0;
+    padding: 0;
+}
+
+tooltip {
+    background: @main-bg;
+    color: @main-fg;
+    border-radius: 7px;
+    border-width: 0px;
+}
+
+#workspaces button {
+    margin: 0;
+    padding: 0 10px;
+    color: @main-fg;
+
+}
+
+#workspaces button.active {
+    background: @wb-act-bg;
+    color: @wb-act-fg;
+}
+
+#cpu,
+#memory,
+#temperature {
+    margin: 0 5px;
+}
+
+#power,
+#bluetooth {
+    margin: 0 5px;
+}

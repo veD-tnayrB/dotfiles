@@ -1,0 +1,10 @@
+    @define-color primary #5B5550;
+    @define-color secondary #4A433F;
+    @define-color tertiary #453930;
+    
+    @define-color background #0B090B;
+    @define-color foreground #A1918A;
+    
+    @define-color text #5B5550;
+    @define-color accent #A1918A;
+    @define-color border #4A433F;
