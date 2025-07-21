@@ -9,8 +9,6 @@ PACKAGES=(
     wlogout
     hyprpaper
     xclip
-    gtk3
-    gtk4
     hypridle
     # Add any other packages you need here
 )
