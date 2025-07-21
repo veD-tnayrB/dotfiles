@@ -5,6 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+export PATH=$PATH:$(go env GOPATH)/bin
 alias vim="nvim"
 alias v="nvim"
 alias ai="DATA_DIR=~/.open-webui uvx --python 3.11 open-webui@latest serve"
