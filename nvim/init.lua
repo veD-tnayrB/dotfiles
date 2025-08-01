@@ -404,6 +404,9 @@ map("n", "<C-f>", function()
   require("telescope.builtin").current_buffer_fuzzy_find()
 end, opts)
 
+-- Find words in all the files
+vim.keymap.set("n", "<leader>fs", function() require('telescope.builtin').live_grep() end, { noremap = true, desc = "Live Grep" })
+
 -- Open last closed file (Ctrl+Shift+t)
 map("n", "<C-S-t>", function()
   require("telescope.builtin").oldfiles()
